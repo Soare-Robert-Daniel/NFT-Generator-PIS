@@ -1,0 +1,50 @@
+:root {
+    --panelToggleLabel: gray;
+    --panelToggleContent: antiquewhite;
+}
+
+.container {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+}
+
+.switch {
+    background-color: var(--panelToggleLabel);
+    padding: 5px;
+    border-radius: 5px 5px 0px 0px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.closed {
+    border-radius: 5px;
+}
+
+.content {
+    background-color: var(--panelToggleContent);
+    border-radius: 0 0px 5px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.input-label {
+    padding: 0px 10px;
+}
+
+.input-name {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    background-color: white;
+    width: fit-content;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.input-value {
+    padding: 5px;
+}

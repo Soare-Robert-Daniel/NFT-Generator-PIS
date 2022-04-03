@@ -1,0 +1,11 @@
+:root {
+    --sidebarBackground: #FEFEFE;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    padding: 5px;
+    background-color: var(--sidebarBackground);
+}

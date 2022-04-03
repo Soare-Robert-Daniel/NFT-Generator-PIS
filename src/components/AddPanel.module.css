@@ -1,0 +1,23 @@
+:root {
+    --btnTextColor: black;
+    --btnBackgroundColor: white;
+    --btnHoverColor: violet;
+    --borderColor: black;
+}
+
+.btn {
+    margin: 10px;
+    width: 100%;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 2px solid var(--borderColor);
+    box-shadow: none;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: var(--btnBackgroundColor);
+}
+
+.btn:hover {
+    background-color: var(--btnHoverColor);
+}

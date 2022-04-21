@@ -1,0 +1,15 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 10px;
+    background: cadetblue;
+}
+
+.canvas {
+    width: 90%;
+    height: 90%;
+    border: 1px solid red;
+}

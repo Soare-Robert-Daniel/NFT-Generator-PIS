@@ -1,5 +1,5 @@
 import styles from './PanelToggle.module.css'
-import {Component, createSignal} from "solid-js";
+import {Component, createSignal, Show} from "solid-js";
 
 type ToggleProps = {
     name: string
@@ -18,24 +18,22 @@ const PanelToggle: Component<ToggleProps> = props => {
                     <span>{labelName()}</span>
                 </div>
             </div>
-            {
-                show() && (
-                    <div class={styles.content}>
-                        <div class={styles["input-name"]}>
-                            <label class={styles["input-label"]}>
-                                Name
-                            </label>
-                            <input
-                                class={styles["input-value"]}
-                                value={labelName()}
-                                onChange={event => {
-                                    setLabelName(event.currentTarget.value)
-                                }}/>
-                        </div>
-                        {props.children}
+            <Show when={show()}>
+                <div class={styles.content}>
+                    <div class={styles["input-name"]}>
+                        <label class={styles["input-label"]}>
+                            Name
+                        </label>
+                        <input
+                            class={styles["input-value"]}
+                            value={labelName()}
+                            onChange={event => {
+                                setLabelName(event.currentTarget.value)
+                            }}/>
                     </div>
-                )
-            }
+                    {props.children}
+                </div>
+            </Show>
         </div>
     )
 }

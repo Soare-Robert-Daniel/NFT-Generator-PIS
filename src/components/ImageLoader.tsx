@@ -1,18 +1,32 @@
-import {Component, createSignal} from "solid-js";
+import {Component, For} from "solid-js";
 import styles from './ImageLoader.module.css';
+import {setStore} from "../store";
 
-const ImageLoader: Component = () => {
-    const [imgSrc, setImgSrc] = createSignal<string>('')
+type ImageLoaderProps = {
+    id: string,
+    images: Readonly<string[]>
+}
+
+const ImageLoader: Component<ImageLoaderProps> = (props) => {
+    let fileInputRef: HTMLInputElement | undefined;
     return (
         <div class={styles.container}>
-            <div class={styles.preview}>
-                {
-                    imgSrc() && (
-                        <img width={100} height={100} src={imgSrc()}/>
-                    )
-                }
+            <div class={styles.images}>
+                <For each={props.images}>
+                    {
+                        (img) => (
+                            <div class={styles.preview}>
+                                {
+                                    <img width={100} height={100} alt='image' src={img}/>
+                                }
+                            </div>
+                        )
+                    }
+                </For>
             </div>
+
             <input
+                ref={fileInputRef}
                 class={styles.input}
                 type="file"
                 accept="image/*"
@@ -25,7 +39,10 @@ const ImageLoader: Component = () => {
 
                         reader.onload = () => {
                             if (reader.result) {
-                                setImgSrc(reader.result as string);
+                                if (fileInputRef) {
+                                    fileInputRef.value = ''
+                                }
+                                setStore('items', i => i.id === props.id, 'images', images => [...images, reader.result as string])
                             }
                         }
 

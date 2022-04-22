@@ -1,6 +1,7 @@
 import {Component, createSignal} from "solid-js";
 import styles from './AddPanel.module.css';
 import {setStore} from "../store";
+import {fabric} from "fabric";
 
 const AddPanel: Component = () => {
 
@@ -13,7 +14,7 @@ const AddPanel: Component = () => {
                 onClick={() => {
                     const id = `item-${count()}`
                     setCount(x => x + 1)
-                    setStore('items', i => [...i, {id, images: []}])
+                    setStore('items', i => [...i, {id, images: [], selectedImage: 0}])
                 }}
             >
                 Add

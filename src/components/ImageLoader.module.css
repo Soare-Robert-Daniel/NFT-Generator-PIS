@@ -19,6 +19,10 @@
     justify-content: center;
 }
 
+.selected {
+    border: 3px solid red;
+}
+
 .preview img {
     object-fit: cover;
 }

@@ -1,10 +1,12 @@
-import {Component, For} from "solid-js";
+import {Component, Index} from "solid-js";
 import styles from './ImageLoader.module.css';
 import {setStore} from "../store";
+import clsx from 'clsx';
 
 type ImageLoaderProps = {
     id: string,
     images: Readonly<string[]>
+    selectedImage: number
 }
 
 const ImageLoader: Component<ImageLoaderProps> = (props) => {
@@ -12,17 +14,24 @@ const ImageLoader: Component<ImageLoaderProps> = (props) => {
     return (
         <div class={styles.container}>
             <div class={styles.images}>
-                <For each={props.images}>
+                <Index each={props.images}>
                     {
-                        (img) => (
-                            <div class={styles.preview}>
+                        (img, index) => (
+                            <div 
+                                class={clsx(styles.preview,{
+                                    [styles.selected]: index === props.selectedImage
+                                })}
+                                onClick={ () => {
+                                    setStore('items', i => i.id === props.id, 'selectedImage', index)
+                                }}
+                            >
                                 {
-                                    <img width={100} height={100} alt='image' src={img}/>
+                                    <img width={100} height={100} alt='image' src={img()}/>
                                 }
                             </div>
                         )
                     }
-                </For>
+                </Index>
             </div>
 
             <input

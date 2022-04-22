@@ -12,7 +12,7 @@ const Sidebar: Component = () => {
                 {
                     (item) => (
                         <PanelToggle name={"Item 1"}>
-                            <ImageLoader id={item.id} images={item.images}/>
+                            <ImageLoader id={item.id} images={item.images} selectedImage={item.selectedImage}/>
                         </PanelToggle>
                     )
                 }

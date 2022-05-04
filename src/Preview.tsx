@@ -42,16 +42,19 @@ const Preview: Component = () => {
             if(imgToRender) {
                 if( !canvasImg()[item.id] ) {
                     fabric.Image.fromURL(imgToRender, (x) => {
-                        x.scale(0.3)
+                        x.scaleToHeight(80)
                         setCanvasImg(o => ({...o, [item.id]: x}))
                         canvas()?.add(x)
                     })
                 } else {
-                    canvasImg()[item.id].setSrc( imgToRender)
+                    canvasImg()[item.id].setSrc( imgToRender, () => {
+                        canvas()?.renderAll()
+                    })
                 }
             }
-            
         })
+
+        
     })
 
     onCleanup(() => canvas()?.getObjects().forEach(o => canvas()?.remove(o)))

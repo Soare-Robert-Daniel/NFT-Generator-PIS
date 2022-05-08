@@ -20,8 +20,8 @@
     height: 34px;
     margin: 8px;
     border-radius: 50%;
-    border: 6px solid #fff;
-    border-color: #fff transparent #fff transparent;
+    border: 6px solid #FEB139;
+    border-color: #FEB139 transparent #FEB139 transparent;
     animation: loading-anim 1.2s linear infinite;
 }
 

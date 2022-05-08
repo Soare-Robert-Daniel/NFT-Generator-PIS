@@ -1,13 +1,13 @@
 import type {Component} from 'solid-js';
 import styles from './App.module.css';
 import Sidebar from "./Sidebar";
-import Preview from "./Preview";
+import CanvasArea from "./CanvasArea";
 
 const App: Component = () => {
   return (
     <div class={styles.App}>
         <Sidebar></Sidebar>
-        <Preview></Preview>
+        <CanvasArea></CanvasArea>
     </div>
   );
 };

@@ -10,8 +10,8 @@ const Sidebar: Component = () => {
         <div class={styles.sidebar}>
             <For each={store.items} fallback={<div>Loading...</div>}>
                 {
-                    (item) => (
-                        <PanelToggle name={"Item 1"}>
+                    (item, idx) => (
+                        <PanelToggle name={`Panel ${idx() + 1}`}>
                             <ImageLoader id={item.id} images={item.images} selectedImage={item.selectedImage}/>
                         </PanelToggle>
                     )

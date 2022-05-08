@@ -20,7 +20,7 @@ const PanelToggle: Component<ToggleProps> = props => {
             </div>
             <Show when={show()}>
                 <div class={styles.content}>
-                    <div class={styles["input-name"]}>
+                    {/* <div class={styles["input-name"]}>
                         <label class={styles["input-label"]}>
                             Name
                         </label>
@@ -30,7 +30,7 @@ const PanelToggle: Component<ToggleProps> = props => {
                             onChange={event => {
                                 setLabelName(event.currentTarget.value)
                             }}/>
-                    </div>
+                    </div> */}
                     {props.children}
                 </div>
             </Show>

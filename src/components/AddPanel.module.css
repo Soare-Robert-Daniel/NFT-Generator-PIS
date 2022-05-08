@@ -1,11 +1,33 @@
 :root {
     --btnTextColor: black;
-    --btnBackgroundColor: white;
+    --btnBackgroundColor: #6A2C70;
     --btnHoverColor: violet;
     --borderColor: black;
 }
 
 .btn {
+    font-size: 1.5rem;
+    background-color: var(--btnBackgroundColor);
+    border: unset;
+    color: #EEE;
+    display: inline-block;
+    padding: 15px 25px;
+    cursor: pointer;
+    text-align: center;	
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    font-family: monospace;
+}
+
+.btn:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* .btn {
     margin-top: 10px;
     width: 100%;
     padding: 10px 20px;
@@ -20,4 +42,4 @@
 
 .btn:hover {
     background-color: var(--btnHoverColor);
-}
+} */

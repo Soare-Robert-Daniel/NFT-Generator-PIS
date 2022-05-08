@@ -17,7 +17,7 @@ const AddPanel: Component = () => {
                     setStore('items', i => [...i, {id, images: [], selectedImage: 0}])
                 }}
             >
-                Add
+                Add Panel
             </button>
         </div>
     )

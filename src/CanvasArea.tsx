@@ -6,6 +6,7 @@ import {Canvas, Image,} from "fabric/fabric-impl";
 import LoadingCircle from "./components/LoadingCircle";
 import fastCartesian from 'fast-cartesian'
 import JSZip from "jszip"
+import randomColor from 'randomcolor';
 
 type InCanvas = {
     [index: string]: Image
@@ -78,6 +79,10 @@ const CanvasArea: Component = () => {
             return new Promise((resolve, reject) => {
                 let ready = 0;
                 const t = setTimeout( () => reject(''), 5000);
+
+                if(canvas() !== undefined) {
+                    canvas()!.backgroundColor = randomColor();
+                }
 
                 c.forEach( (i, itemIdx) => {
                     console.log(i-1, store.items[itemIdx].images[i-1])
